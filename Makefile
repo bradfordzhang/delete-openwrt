@@ -1,6 +1,6 @@
 CC=g++
 CPPFLAGS=-Wall -Wextra
-INSTALL_PATH=lede
+INSTALL_PATH=../lede
 
 delete-openwrt:
 	$(CC) -o delete delete.cpp $(CFLAGS)
