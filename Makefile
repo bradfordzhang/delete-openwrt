@@ -10,4 +10,3 @@ install:
 
 clean:
 	rm delete
-
