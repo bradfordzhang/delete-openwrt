@@ -3,7 +3,7 @@ CPPFLAGS=-Wall -Wextra
 INSTALL_PATH=/usr/local/bin
 
 delete-openwrt:
-	$(CC) -o delete delete.cpp $(CFLAGS)
+	$(CC) -o delete-openwrt delete.cpp $(CFLAGS)
 
 install:
 	cp delete $(INSTALL_PATH)
