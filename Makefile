@@ -1,12 +1,13 @@
 CC=g++
 CPPFLAGS=-Wall -Wextra
 INSTALL_PATH=/usr/local/bin
+BINARY_FILE=delete-openwrt
 
 delete-openwrt:
-	$(CC) -o delete-openwrt delete.cpp $(CFLAGS)
+	$(CC) -o $(BINARY_FILE) delete.cpp $(CFLAGS)
 
 install:
-	cp delete $(INSTALL_PATH)
+	cp $(BINARY_FILE) $(INSTALL_PATH)
 
 clean:
-	rm delete
+	rm $(BINARY_FILE)
