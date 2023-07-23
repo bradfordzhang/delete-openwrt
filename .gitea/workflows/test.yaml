@@ -1,0 +1,15 @@
+name: test
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Setup C++
+        run: |
+          apt update
+          apt install build-essential -y
+      - name: test
+        run: make

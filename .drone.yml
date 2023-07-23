@@ -1,8 +1,0 @@
-kind: pipeline
-name: test
-steps:
-  - name: test
-    image: gcc:latest
-    depends_on: [clone]
-    commands:
-      - make
