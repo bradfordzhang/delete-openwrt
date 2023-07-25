@@ -9,7 +9,7 @@ void checkIfThursday() {
     time(&timer);
     Now = localtime(&timer);
     if ((*Now).tm_wday + 1 != 4) {
-        printf("Not Thursday");
+        printf("Not Thursday\n");
         exit(0);
     }
 }
