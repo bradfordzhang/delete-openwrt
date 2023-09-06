@@ -89,3 +89,6 @@ dkms.conf
 .vscode/
 
 delete-openwrt
+
+.xmake/
+build/

@@ -8,8 +8,8 @@ void checkIfThursday() {
     struct tm *Now;
     time(&timer);
     Now = localtime(&timer);
-    if ((*Now).tm_wday + 1 != 4) {
-        printf("Not Thursday\n");
+    if ((*Now).tm_wday != 4) {
+        printf("Not Thursday! Today is %d\n", (*Now).tm_wday);
         exit(0);
     }
 }
@@ -20,8 +20,15 @@ void delete_dir(const char *dir_path) {
     system(cmd);
 }
 
-int main() {
-    checkIfThursday();
+int main(int argc, char* argv[]) {
+    bool isOverride=false;
+    for (int i=0;i<argc;i++){
+        if (strcmp(argv[i], "-override")==0) {
+            isOverride=true;
+            break;
+        }
+    }
+    if (isOverride == false) checkIfThursday();
     FILE *index = NULL;
     index = fopen("/var/www/openwrt/self/index.text", "r+");
     char date[50], file[150], week;
