@@ -23,7 +23,7 @@ void delete_dir(const char *dir_path) {
 int main(int argc, char* argv[]) {
     bool isOverride=false;
     for (int i=0;i<argc;i++){
-        if (strcmp(argv[i], "-override")==0) {
+        if (strcmp(argv[i], "--override")==0) {
             isOverride=true;
             break;
         }
