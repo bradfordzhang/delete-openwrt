@@ -7,13 +7,13 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: Setup build essentials
+        run: |
+          apt update
+          apt install build-essential lua5.4 -y
       - name: Prepare local xmake
         uses: xmake-io/github-action-setup-xmake@v1
         with: 
           xmake-version: branch@master
-      - name: Setup C++
-        run: |
-          apt update
-          apt install build-essential -y
       - name: test
-        run: xmake build -v -y
+        run: xmake build -v -y --root
