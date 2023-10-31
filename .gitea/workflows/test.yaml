@@ -10,7 +10,7 @@ jobs:
       - name: Setup build essentials
         run: |
           apt update
-          apt install build-essential -y
+          apt install build-essential lz4 -y
       - name: Prepare local xmake
         uses: xmake-io/github-action-setup-xmake@v1
         with: 
